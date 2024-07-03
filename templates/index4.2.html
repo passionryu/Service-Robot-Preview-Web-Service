@@ -1,0 +1,167 @@
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+
+        <link rel="stylesheet" href="../static/styles.css">
+        <title>Robot web service protocol</title>
+        <script>
+
+          
+
+
+            function updateBatteryStatus() {
+                fetch('/battery_status')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('battery-status').innerText = data.battery;
+                    });
+            }
+
+            function showServeMessage() {
+                fetch('/show_turtle_page1')
+                    .then(response => response.json())
+                    .then(data => {
+                        showMessage(data.message);
+                    });
+            }
+
+            function showCollectMessage() {
+                fetch('/show_turtle_page2')
+                    .then(response => response.json())
+                    .then(data => {
+                        showMessage(data.message);
+                    });
+            }
+
+            function chargeRobot() {
+                fetch('/charge_robot')
+                    .then(response => response.json())
+                    .then(data => {
+                        showMessage(data.message);
+                        updateBatteryStatus(); // Update battery status after charging
+                    });
+            }
+
+            function showMessage(message) {
+                const toastDiv = document.createElement('div');
+                toastDiv.className = 'toast';
+                toastDiv.textContent = message;
+
+                const toastContainer = document.getElementById('toast-container');
+                toastContainer.appendChild(toastDiv);
+
+                setTimeout(() => {
+                    toastDiv.remove();
+                }, 5000); // Remove toast after 10 seconds
+            }
+
+            // Update battery status every 0.5 seconds
+            setInterval(updateBatteryStatus, 500); // Adjust interval as needed
+        </script>
+    </head>
+
+    <body bgcolor="#FFFFF0">
+        <h1 align="center">식당 서빙로봇 서비스 프로토타입</h1>
+        <h5 align="center">-효율적인 이동 동선 선택과 명확한 규칙을 탑재한 서빙 로봇 사전구동 웹 서비스-</h5>
+
+
+
+        <div class="container">
+
+            <div class="box" id="1">
+                <h3 align="center">음식 서빙 프로토타입</h3>
+                <h5 align="center">Used Algorithm = Dijkstra</h5>
+
+                <table>
+                    <tr>
+                        <form id="serveFoodForm" action="#" onsubmit="showServeMessage(); return false;">
+                            <!-- <input type="text" id="serve" value="[?, ?]" /> -->
+                            
+                            <button type="submit" id="serveFoodButton">Start Serving</button>
+                            <!-- <button onclick="startServing()">Start Serving</button> -->
+                        </form>
+                        <br>
+                        <!-- <input type="button" id="stop" value="Show_path1"   /> -->
+                        <form id="serveFood" action="/show_turtle_pageA" method="get">                    
+                            <button type="submit" id="serveFood">Show Serving Path</button>
+                        </form>
+
+                    </tr>
+                </table>
+                <img src="../static/foodtown2.png" width="300" height="200" alt="Food Town">
+                <h6> "table1": [0, 2], "table2": [0, 4], "table3": [0, 6],"table4": [0, 8] </h6>
+                <h6> "table5": [0, 10], "table6": [2, 4],"table7": [2, 6], "table8": [2, 8] </h6>
+                <h6> "table9": [5, 4],"table10": [5, 6], "table11": [5, 8], "table12": [7, 4] </h6>
+                <h6> "table13": [7, 6], "table14": [7, 8], "table15": [7, 10]</h6>
+
+                <canvas id="canvas1" width="400" height="400"></canvas>
+            </div>
+
+
+            <div class="box" id="2">
+                <h3 align="center">그릇 회수 프로토타입(최대 3 테이블)</h3>
+                <h5 align="center">Used Algorithm = Greedy</h5>
+
+                <table>
+                    <tr>
+                        <form id="collectingDishForm" action="#" onsubmit="showCollectMessage(); return false;" >
+                           
+                            <button type="submit" id="collectingDishButton">Start Collecting</button>
+                        </form>
+                        <br>
+                        <!-- <input type="button" id="stop"  value="Show_path2" /> -->
+                        <form id="collectFood" action="/show_turtle_pageB" method="get">                    
+                            <button type="submit" id="collectFood">Show Collecting Path</button>
+                        </form>
+                    </tr>
+                </table>
+
+                <img src="../static/bot.gif" width="437" height="350">
+              
+                
+
+                <canvas id="canvas2" width="400" height="400"></canvas>
+            </div>
+
+            <div class="box" id="3">
+                <h3 align="center">배터리 관리 프로토타입</h3>
+                <h5 align="center">Used Algorithm = Procedural </h5>
+
+                <h3 align="center">Battery: <span id="battery-status">{{ battery }}</span>%</h3>
+                <br>
+                <h6></h6>
+                <h6></h6>
+                <div class="loader"></div>
+                <br>
+
+                <div id="toast-container"></div> <!-- Container for toast messages -->
+
+                <br>
+                <a class="fancy" href="#" onclick="chargeRobot();">
+                    <span class="top-key"></span>
+                    <span class="text">Charge Robot</span>
+                    <span class="bottom-key-1"></span>
+                    <span class="bottom-key-2"></span>
+                </a>
+            </div>
+
+        </div>
+
+        <script>
+            function checkBatteryStatus() {
+                fetch('/check_battery_status')
+                    .then(response => response.json())
+                    .then(data => {
+                        showMessage(data.message);
+                        if (data.status === 'low') {
+                            updateBatteryStatus(); // 배터리 재충전 후 상태 업데이트
+                        }
+                    });
+            }
+            setInterval(checkBatteryStatus, 5000); // Check battery status every 5 seconds
+        </script>
+
+    </body>
+
+    </html>

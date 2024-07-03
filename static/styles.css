@@ -1,0 +1,335 @@
+h1 {
+  margin-bottom: 50px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.box {
+  width: 30%;
+  height: 550px;
+  background-color: #FFFFF0;
+  border: 2px solid black;
+  position: relative;
+}
+
+.loader {
+  margin-left: 170px;
+
+}
+
+
+#canvas1 {
+  position: absolute;
+  /* or relative */
+  top: 200px;
+  /* Adjust the top position */
+  left: 227px;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Center horizontally */
+}
+
+#canvas2 {
+  position: absolute;
+  /* or relative */
+  top: 200px;
+  /* Adjust the top position */
+  left: 227px;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Center horizontally */
+}
+/* 기타 */
+.loader {
+    position: relative;
+    width: 92px;
+    height: 180px;
+    border-radius: 8px;
+    transform: translateY(-30px);
+    background-color: #000;
+    background-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 4%,rgba(81,81,81,1) 14%,rgba(44,44,44,1) 26%,rgba(2,2,2,1) 53%,rgba(2,2,2,1) 65%,rgba(2,2,2,0) 66%),
+      linear-gradient(#111, #111);
+    background-repeat: no-repeat;
+    background-size: 10px 10px , 84px 162px;
+    background-position: center 2px, 4px 8px;
+    animation: lightUp 6s linear infinite alternate;
+  }
+  
+  .loader:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 190px;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 75px;
+    background-image: linear-gradient(#fff, #fff),
+    linear-gradient(#bbb, #bbb),
+    linear-gradient(#fff, #fff);
+    background-repeat: no-repeat;
+    background-position: center 4px , center top, center 5px;
+    background-size: 11px 11px , 7px 4px ,  2px 100%;
+    animation: plugin 6s linear infinite alternate;
+  }
+  
+  .loader:after {
+    content: '';
+    width: 30px;
+    height: 60px;
+    background-image: linear-gradient(#888, #888),
+    linear-gradient(to right, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.5) 40%,rgba(255,255,255,0.3) 50%,rgba(255,255,255,0.1) 100%),
+    linear-gradient(#15ff00, #15ff00),
+    linear-gradient(#888, #888);
+    background-size: 12px 4px, 30px 52px , 30px 0px , 30px 56px;
+    background-position: center 0 , center 6px , center bottom , center 4px;
+    background-repeat: no-repeat;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50% , -50%);
+    animation: charging 6s linear infinite alternate;
+  }
+  
+  @keyframes charging {
+    0%  , 25% {
+      opacity: 0;
+      background-size: 12px 4px, 30px 52px , 30px 0px , 30px 56px;
+    }
+  
+    26% ,  75% {
+      opacity: 1;
+      background-size: 12px 4px, 30px 52px , 30px 0px , 30px 56px;
+    }
+  
+    50% , 100% {
+      opacity: 1;
+      background-size: 12px 4px, 30px 52px , 30px 56px , 30px 56px
+    }
+  }
+  
+  @keyframes lightUp {
+    0%  , 25% {
+      background-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 4%,rgba(81,81,81,1) 14%,rgba(44,44,44,1) 26%,rgba(2,2,2,1) 53%,rgba(2,2,2,1) 65%,rgba(2,2,2,0) 66%),
+        linear-gradient(#111, #111);
+    }
+  
+    26% , 100% {
+      background-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 4%,rgba(81,81,81,1) 14%,rgba(44,44,44,1) 26%,rgba(2,2,2,1) 53%,rgba(2,2,2,1) 65%,rgba(2,2,2,0) 66%),
+        linear-gradient(#DDD, #DDD);
+    }
+  }
+  
+  @keyframes plugin {
+    0% , 25% {
+      top: 190px;
+      background-position: center 4px , center top, center 5px;
+    }
+  
+    26%  , 100% {
+      background-position: center 0 , center top, center 5px;
+      top: 180px;
+    }
+  }
+/* 구분선 */
+.loader {
+  position: relative;
+  width: 92px;
+  height: 180px;
+  border-radius: 8px;
+  transform: translateY(-30px);
+  background-color: #000;
+  background-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 4%,rgba(81,81,81,1) 14%,rgba(44,44,44,1) 26%,rgba(2,2,2,1) 53%,rgba(2,2,2,1) 65%,rgba(2,2,2,0) 66%),
+    linear-gradient(#111, #111);
+  background-repeat: no-repeat;
+  background-size: 10px 10px , 84px 162px;
+  background-position: center 2px, 4px 8px;
+  animation: lightUp 6s linear infinite alternate;
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 190px;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 75px;
+  background-image: linear-gradient(#fff, #fff),
+  linear-gradient(#bbb, #bbb),
+  linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  background-position: center 4px , center top, center 5px;
+  background-size: 11px 11px , 7px 4px ,  2px 100%;
+  animation: plugin 6s linear infinite alternate;
+}
+
+.loader:after {
+  content: '';
+  width: 30px;
+  height: 60px;
+  background-image: linear-gradient(#888, #888),
+  linear-gradient(to right, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.5) 40%,rgba(255,255,255,0.3) 50%,rgba(255,255,255,0.1) 100%),
+  linear-gradient(#15ff00, #15ff00),
+  linear-gradient(#888, #888);
+  background-size: 12px 4px, 30px 52px , 30px 0px , 30px 56px;
+  background-position: center 0 , center 6px , center bottom , center 4px;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50% , -50%);
+  animation: charging 6s linear infinite alternate;
+}
+
+@keyframes charging {
+  0%  , 25% {
+    opacity: 0;
+    background-size: 12px 4px, 30px 52px , 30px 0px , 30px 56px;
+  }
+
+  26% ,  75% {
+    opacity: 1;
+    background-size: 12px 4px, 30px 52px , 30px 0px , 30px 56px;
+  }
+
+  50% , 100% {
+    opacity: 1;
+    background-size: 12px 4px, 30px 52px , 30px 56px , 30px 56px
+  }
+}
+
+@keyframes lightUp {
+  0%  , 25% {
+    background-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 4%,rgba(81,81,81,1) 14%,rgba(44,44,44,1) 26%,rgba(2,2,2,1) 53%,rgba(2,2,2,1) 65%,rgba(2,2,2,0) 66%),
+      linear-gradient(#111, #111);
+  }
+
+  26% , 100% {
+    background-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 4%,rgba(81,81,81,1) 14%,rgba(44,44,44,1) 26%,rgba(2,2,2,1) 53%,rgba(2,2,2,1) 65%,rgba(2,2,2,0) 66%),
+      linear-gradient(#DDD, #DDD);
+  }
+}
+
+@keyframes plugin {
+  0% , 25% {
+    top: 190px;
+    background-position: center 4px , center top, center 5px;
+  }
+
+  26%  , 100% {
+    background-position: center 0 , center top, center 5px;
+    top: 180px;
+  }
+}
+  
+/* 버튼 구분선 */
+
+.fancy {
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  float: center;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: absolute;
+  top:auto;
+  left:26%;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+ }
+ 
+ .fancy::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: black;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+ }
+ 
+ .fancy .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+ }
+ 
+ .fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+ }
+ 
+ .fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+ }
+ 
+ .fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+ }
+ 
+ .fancy:hover {
+  color: white;
+  background: black;
+ }
+ 
+ .fancy:hover::before {
+  width: 0.9375rem;
+  background: white;
+ }
+ 
+ .fancy:hover .text {
+  color: white;
+  padding-left: 1.5em;
+ }
+ 
+ .fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+ }
+ 
+ .fancy:hover .bottom-key-1,
+  .fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+ }
