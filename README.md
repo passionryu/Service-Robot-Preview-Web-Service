@@ -27,10 +27,20 @@ https://github.com/user-attachments/assets/afc988da-341d-441d-9c01-b11a44688259
 
    
 
-4. 서빙 로봇 배터리 관리 시스템 적용 및 시각화 -절차적 알고리즘 적용
+3. 서빙 로봇 배터리 관리 시스템 적용 및 시각화 -절차적 알고리즘 적용
    ->배터리 30% 이하일시, 배터리 부족 알림 + 충전 권고 알림
-https://github.com/user-attachments/assets/4884fc51-fd33-4287-8ba4-cdcca8e4f3f9
+
+
+https://github.com/user-attachments/assets/8787a722-657e-404f-9be9-7d565009c1a8
+
+
+
+
    ->배터리 10% 이하일시, 서비스 강제 중단 + 강제 충전 시작
-https://github.com/user-attachments/assets/ac3480cb-6f21-4fa8-8972-3dc9e4dd927f
+
+
+
+https://github.com/user-attachments/assets/3d31f477-2e60-47b8-b47b-ddfab2679582
+
 
 
