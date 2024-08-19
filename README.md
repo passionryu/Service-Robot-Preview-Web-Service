@@ -13,6 +13,10 @@
    ->주문이 들어간 테이블에 다익스트라 알고리즘을 적용하여 최단거리를 계산하여 로봇이 서빙한다.
 ![](https://github.com/user-attachments/assets/5ae6704f-a9ae-458c-870c-b0068e7f8dd1)
 
+
+https://github.com/user-attachments/assets/60e4ac99-2e07-4d38-8b98-21ecef4b1c84
+
+
    
 2. 그릇 회수 최단 거리 동선 계산 및 시각화 -다익스트라 알고리즘, 그리디 알고리즘 적용
    ->최대 3개의 테이블에 다익스트라, 그리디 알고리즘을 적용하여 최단 거리를 계산하여 로봇이 그릇을 회수한다.
