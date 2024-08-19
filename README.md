@@ -15,4 +15,7 @@
    ->배터리 10% 이하일시, 서비스 강제 중단 + 강제 충전 시작
 
 
+   https://github.com/passionryu/Service-Robot-Preview-Web-Service/issues/1#issue-2472461380
+
+
 
