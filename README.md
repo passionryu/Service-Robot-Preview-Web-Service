@@ -2,6 +2,10 @@
 
 #역할: 서비스 기획, 백엔드 개발(python, flask) , 프론트 엔드 개발(Html, Css, Js) 
 
+#서비스 메인 화면
+https://github.com/user-attachments/assets/41ae62e3-ec5f-41a3-9f58-09db18ddf1df
+
+
 
 #웹 서비스 기능
 1. 음식 서빙 최단 거리 동선 계산 및 시각화 - 다익스트라 알고리즘 적용
@@ -15,7 +19,6 @@
    ->배터리 10% 이하일시, 서비스 강제 중단 + 강제 충전 시작
 
 
-   ![메인 화면](https://github.com/user-attachments/assets/41ae62e3-ec5f-41a3-9f58-09db18ddf1df)
 
 
 
