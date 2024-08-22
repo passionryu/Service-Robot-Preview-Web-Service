@@ -4,9 +4,9 @@
 
 
 <h2>역할</h2>
-<h3>서비스 기획 </h3>
-<h3>백엔드 개발-python, flask </h3>
-<h3>프론트 엔드 개발-Html, Css, Js </h3>
+<h3>*서비스 기획 </h3>
+<h3>*백엔드 개발-python, flask </h3>
+<h3>*프론트 엔드 개발-Html, Css, Js </h3>
 <br>
 
 <h2>서비스 메인 화면</h2>
