@@ -7,7 +7,7 @@
 
 
 <h3>역할: 서비스 기획, 백엔드 개발(python, flask) , 프론트 엔드 개발(Html, Css, Js) </h3>
-
+<br>
 
 
 
